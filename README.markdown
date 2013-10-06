@@ -1,8 +1,43 @@
-#templator_chabz
+# Templator Chabz
 
 A gem that generates templates for your rails app. It uses Bootstrap and Foundation.
 
-##The MIT License (MIT)
+# Installation
+
+Add this to your Gemfile and run ```bundle install```:
+  
+```ruby
+gem 'templator_chabz', git: 'git@github.com:chabzlala29/templator_chabz.git'
+```
+
+# What's Next?
+
+By default generator files set to Zurb Foundation front-end framework. To generate files run the following command.
+```bash
+rails g templator_chabz:install  
+```
+
+###If your using HAML add ```--haml``` to generator:
+```bash
+rails g templator_chabz:install --haml
+```
+
+##Bootstrap Rails
+Add ```--framework=bootstrap``` to generator:
+```bash
+rails g templator_chabz:install --framework=bootstrap
+```
+
+### Generate Fluid Layout(Only in Bootstrap):
+```bash
+rails g templator_chabz:install --framework=bootstrap --fluid
+```
+
+### Or Fixed Layout(Only in Bootstrap):
+```bash
+rails g templator_chabz:install --framework=bootstrap --fixed
+```
+## The MIT License (MIT)
 
 Copyright (c) 2013 Charles Darwin Pobre
 
