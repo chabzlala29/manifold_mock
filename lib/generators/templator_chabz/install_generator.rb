@@ -58,10 +58,12 @@ module TemplatorChabz
     private
       def create_layout
         if options.framework == "foundation"
-          if options.haml?
-            template 'app-foundation.html.haml', "app/views/layouts/application.html.haml"
-          else
-            template 'app-foundation.html.erb', "app/views/layouts/application.html.erb"
+          Bundler.with_clean_env do
+            if options.haml?
+              run "rails g foundation:install --haml"
+            else
+              run "rails g foundation:install"
+            end
           end
         elsif options.framework == "bootstrap"
           option_bs = ("fluid" if options.fluid) || ( "fixed" if options.fixed) || ""
