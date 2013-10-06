@@ -58,12 +58,12 @@ Add ```--framework=bootstrap``` to generator:
 rails g templator_chabz:install --framework=bootstrap
 ```
 
-### Generate Fluid Layout(Only in Bootstrap):
+Generate Fluid Layout(Only in Bootstrap):
 ```bash
 rails g templator_chabz:install --framework=bootstrap --fluid
 ```
 
-### Or Fixed Layout(Only in Bootstrap):
+Or Fixed Layout(Only in Bootstrap):
 ```bash
 rails g templator_chabz:install --framework=bootstrap --fixed
 ```
