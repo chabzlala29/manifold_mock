@@ -11,6 +11,11 @@ rails 4.0.0
 # Installation
 
 Add this to your Gemfile and run ```bundle install```:
+
+```ruby
+gem 'templator_chabz', '~> 0.9.0'
+```
+From latest build:
   
 ```ruby
 gem 'templator_chabz', git: 'git@github.com:chabzlala29/templator_chabz.git'
