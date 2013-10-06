@@ -2,6 +2,12 @@
 
 A gem that generates templates for your rails app. It uses Bootstrap and Foundation.
 
+# Runtime Dependencies:
+Built with Rails 4.
+```ruby
+rails 4.0.0
+```
+
 # Installation
 
 Add this to your Gemfile and run ```bundle install```:
