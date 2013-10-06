@@ -1,0 +1,216 @@
+!!! 5
+/ paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+/[if lt IE 7 ] <html class=\"ie6\" lang=\"en\">
+/[if IE 7 ]    <html class=\"ie7\" lang=\"en\">
+/[if IE 8 ]    <html class=\"ie8\" lang=\"en\">
+/[if IE 9 ]    <html class=\"ie9\" lang=\"en\">
+/[if (gt IE 9)|!(IE)] <!--> <html lang=\"en\">
+
+%head
+  %meta{ :charset => "utf-8" }
+
+  -# Uncomment to make IE8 render like IE7
+  -# meta http-equiv="X-UA-Compatible" content="IE=7"
+
+  -# Set the viewport width to device width for mobile
+  %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+
+  %title= content_for?(:title) ? yield(:title) : "Untitled"
+
+  = stylesheet_link_tag "application"
+  = javascript_include_tag "vendor/custom.modernizr"
+  = csrf_meta_tag
+
+%body
+/ Header and Nav
+%nav.top-bar
+  %ul.title-area
+    / Title Area
+    %li.name
+      %h1
+        %a{href: "#"}
+          Top Bar Title
+    %li.toggle-topbar.menu-icon
+      %a{href: "#"}
+        %span Menu
+  %section.top-bar-section
+    / Left Nav Section
+    %ul.left
+      %li.divider
+      %li.has-dropdown
+        %a.active{href: "#"} Main Item 1
+        %ul.dropdown
+          %li
+            %label Section Name
+          %li
+            %a{href: "#"} Dropdown Level 1
+          %li
+            %a{href: "#"} Dropdown Option
+          %li
+            %a{href: "#"} Dropdown Option
+          %li.divider
+          %li
+            %label Section Name
+          %li
+            %a{href: "#"} Dropdown Option
+          %li
+            %a{href: "#"} Dropdown Option
+          %li
+            %a{href: "#"} Dropdown Option
+          %li.divider
+          %li
+            %a{href: "#"} See all →
+      %li.divider
+      %li
+        %a{href: "#"} Main Item 2
+      %li.divider
+      %li.has-dropdown
+        %a{href: "#"} Main Item 3
+        %ul.dropdown
+          %li
+            %a{href: "#"} Dropdown Option
+          %li
+            %a{href: "#"} Dropdown Option
+          %li
+            %a{href: "#"} Dropdown Option
+          %li.divider
+          %li
+            %a{href: "#"} See all →
+    / Right Nav Section
+    %ul.right
+      %li.divider
+      %li.has-dropdown
+        %a{href: "#"} Main Item 4
+        %ul.dropdown
+          %li
+            %label Section Name
+          %li.has-dropdown
+            %a{href: "#"} Has Dropdown, Level 1
+            %ul.dropdown
+              %li
+                %a{href: "#"} Dropdown Options
+              %li
+                %a{href: "#"} Dropdown Options
+              %li.has-dropdown
+                %a{href: "#"} Has Dropdown, Level 2
+                %ul.dropdown.test
+                  %li
+                    %a{href: "#"} Subdropdown Option
+                  %li
+                    %a{href: "#"} Subdropdown Option
+                  %li
+                    %a{href: "#"} Subdropdown Option
+              %li
+                %a{href: "#"} Subdropdown Option
+              %li
+                %a{href: "#"} Subdropdown Option
+              %li
+                %a{href: "#"} Subdropdown Option
+          %li
+            %a{href: "#"} Dropdown Option
+          %li
+            %a{href: "#"} Dropdown Option
+          %li.divider
+          %li
+            %label Section Name
+          %li
+            %a{href: "#"} Dropdown Option
+          %li
+            %a{href: "#"} Dropdown Option
+          %li
+            %a{href: "#"} Dropdown Option
+          %li.divider
+          %li
+            %a{href: "#"} See all →
+      %li.divider
+      %li
+        %a{href: "#"} Main Item 5
+      %li.divider
+      %li.has-dropdown
+        %a{href: "#"} Main Item 6
+        %ul.dropdown
+          %li
+            %a{href: "#"} Dropdown Option
+          %li
+            %a{href: "#"} Dropdown Option
+          %li
+            %a{href: "#"} Dropdown Option
+          %li.divider
+          %li
+            %a{href: "#"} See all →
+/ End Header and Nav
+/ Main Grid Section
+.row
+  .large-3.columns
+    .panel
+      %h5 Panel Title
+      %p This is a three columns grid panel with an arbitrary height.
+  .large-6.columns
+    .panel
+      / Edit your layouts for your app
+      = yield
+  .large-3.columns
+    .panel
+      %h5 Panel Title
+      %p This is a three columns grid panel with an arbitrary height.
+.row
+  .large-6.columns
+    .panel
+      %h5 Panel Title
+      %p This is a six columns grid panel with an arbitrary height. Bacon ipsum dolor sit amet salami ham hock biltong ball tip drumstick sirloin pancetta meatball short loin.
+  .large-2.columns
+    .panel
+      %p
+        %img{src: "http://placehold.it/200x200"}/
+  .large-4.columns
+    .panel
+      %h5 Panel Title
+      %p This is a four columns grid panel with an arbitrary height. Bacon ipsum dolor sit amet salami.
+.row
+  .large-4.columns
+    .panel
+      %p
+        %img{src: "http://placehold.it/400x300"}/
+  .large-4.columns
+    .panel
+      %p
+        %img{src: "http://placehold.it/400x300"}/
+  .large-4.columns
+    .panel
+      %p
+        %img{src: "http://placehold.it/400x300"}/
+.row
+  .large-6.columns
+    .panel
+      %h5 Panel Title
+      %p This is a six columns grid panel with an arbitrary height. Bacon ipsum dolor sit amet salami ham hock biltong ball tip drumstick sirloin pancetta meatball short loin.
+  .large-3.columns
+    .panel
+      %h5 Panel Title
+      %p This is a three columns grid panel with an arbitrary height.
+  .large-3.columns
+    .panel
+      %h5 Panel Title
+      %p This is a three columns grid panel with an arbitrary height.
+/ End Grid Section
+/ Footer
+%footer.row
+  .large-12.columns
+    %hr/
+    .row
+      .large-6.columns
+        %p © Copyright no one at all. Go to town.
+      .large-6.columns
+        %ul.inline-list.right
+          %li
+            %a{href: "#"} Section 1
+          %li
+            %a{href: "#"} Section 2
+          %li
+            %a{href: "#"} Section 3
+          %li
+            %a{href: "#"} Section 4
+  = javascript_include_tag "application"
+
+:plain
+  </html>

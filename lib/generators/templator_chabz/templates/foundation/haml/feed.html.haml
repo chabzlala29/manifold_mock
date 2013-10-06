@@ -1,0 +1,155 @@
+!!! 5
+/ paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+/[if lt IE 7 ] <html class=\"ie6\" lang=\"en\">
+/[if IE 7 ]    <html class=\"ie7\" lang=\"en\">
+/[if IE 8 ]    <html class=\"ie8\" lang=\"en\">
+/[if IE 9 ]    <html class=\"ie9\" lang=\"en\">
+/[if (gt IE 9)|!(IE)] <!--> <html lang=\"en\">
+
+%head
+  %meta{ :charset => "utf-8" }
+
+  -# Uncomment to make IE8 render like IE7
+  -# meta http-equiv="X-UA-Compatible" content="IE=7"
+
+  -# Set the viewport width to device width for mobile
+  %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+
+  %title= content_for?(:title) ? yield(:title) : "Untitled"
+
+  = stylesheet_link_tag "application"
+  = javascript_include_tag "vendor/custom.modernizr"
+  = csrf_meta_tag
+
+%body
+  / Header and Nav
+  .row
+    .large-12.columns
+      .panel
+        %h1 Feed Template
+  / End Header and Nav
+  .row
+    / Nav Sidebar
+    / This is source ordered to be pulled to the left on larger screens
+    .large-3.columns
+      .panel
+        %a{href: "#"}
+          %img{src: "http://placehold.it/300x240&text=[img]"}/
+        %h5
+          %a{href: "#"} Your Name
+        .section-container.vertical-nav{"data-options" => "deep_linking: false; one_up: true", "data-section" => ""}
+          %section.section
+            %h5.title
+              %a{href: "#"} Section 1
+          %section.section
+            %h5.title
+              %a{href: "#"} Section 2
+          %section.section
+            %h5.title
+              %a{href: "#"} Section 3
+          %section.section
+            %h5.title
+              %a{href: "#"} Section 4
+          %section.section
+            %h5.title
+              %a{href: "#"} Section 5
+          %section.section
+            %h5.title
+              %a{href: "#"} Section 6
+    / Main Feed
+    / This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens
+    .large-6.columns
+      / Feed Entry
+      .row
+        .large-2.columns.small-3
+          %img{src: "http://placehold.it/80x80&text=[img]"}/
+        .large-10.columns
+          %p
+            %strong Some Person said:
+            Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.
+          %ul.inline-list
+            %li
+              %a{href: ""} Reply
+            %li
+              %a{href: ""} Share
+          %h6 2 Comments
+          .row
+            .large-2.columns.small-3
+              %img{src: "http://placehold.it/50x50&text=[img]"}/
+            .large-10.columns
+              %p Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit
+          .row
+            .large-2.columns.small-3
+              %img{src: "http://placehold.it/50x50&text=[img]"}/
+            .large-10.columns
+              %p Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit
+      / End Feed Entry
+      %hr/
+      / Feed Entry
+      .row
+        .large-2.columns.small-3
+          %img{src: "http://placehold.it/80x80&text=[img]"}/
+        .large-10.columns
+          %p
+            %strong Some Person said:
+            Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.
+          %ul.inline-list
+            %li
+              %a{href: ""} Reply
+            %li
+              %a{href: ""} Share
+      / End Feed Entry
+      %hr/
+      / Feed Entry
+      .row
+        .large-2.columns.small-3
+          %img{src: "http://placehold.it/80x80&text=[img]"}/
+        .large-10.columns
+          %p
+            %strong Some Person said:
+            Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.
+          %ul.inline-list
+            %li
+              %a{href: ""} Reply
+            %li
+              %a{href: ""} Share
+          %h6 2 Comments
+          .row
+            .large-2.columns.small-3
+              %img{src: "http://placehold.it/50x50&text=[img]"}/
+            .large-10.columns
+              %p Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit
+      / End Feed Entry
+    / Right Sidebar
+    / On small devices this column is hidden
+    %aside.large-3.columns.hide-for-small
+      %p
+        %img{src: "http://placehold.it/300x440&text=[ad]"}/
+      %p
+        %img{src: "http://placehold.it/300x440&text=[ad]"}/
+  / Footer
+  %footer.row
+    .large-12.columns
+      %hr/
+      .row
+        .large-5.columns
+          %p © Copyright no one at all. Go to town.
+        .large-7.columns
+          %ul.inline-list.right
+            %li
+              %a{href: "#"} Section 1
+            %li
+              %a{href: "#"} Section 2
+            %li
+              %a{href: "#"} Section 3
+            %li
+              %a{href: "#"} Section 4
+            %li
+              %a{href: "#"} Section 5
+            %li
+              %a{href: "#"} Section 6
+
+  = javascript_include_tag "application"
+
+:plain
+  </html>

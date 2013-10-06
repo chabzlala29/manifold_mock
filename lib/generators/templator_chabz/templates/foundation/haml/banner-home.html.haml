@@ -1,0 +1,114 @@
+!!! 5
+/ paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+/[if lt IE 7 ] <html class=\"ie6\" lang=\"en\">
+/[if IE 7 ]    <html class=\"ie7\" lang=\"en\">
+/[if IE 8 ]    <html class=\"ie8\" lang=\"en\">
+/[if IE 9 ]    <html class=\"ie9\" lang=\"en\">
+/[if (gt IE 9)|!(IE)] <!--> <html lang=\"en\">
+
+%head
+  %meta{ :charset => "utf-8" }
+
+  -# Uncomment to make IE8 render like IE7
+  -# meta http-equiv="X-UA-Compatible" content="IE=7"
+
+  -# Set the viewport width to device width for mobile
+  %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+
+  %title= content_for?(:title) ? yield(:title) : "Untitled"
+
+  = stylesheet_link_tag "application"
+  = javascript_include_tag "vendor/custom.modernizr"
+  = csrf_meta_tag
+
+%body
+  / Nav and Banner
+  .row
+    .large-12.columns
+      %ul.button-group
+        %li
+          %a.button{href: "#"} Link 1
+        %li
+          %a.button{href: "#"} Link 2
+        %li
+          %a.button{href: "#"} Link 3
+        %li
+          %a.button{href: "#"} Link 4
+        %li
+          %a.button{href: "#"} Link 5
+        %li
+          %a.button{href: "#"} Link 6
+        %li
+          %a.button{href: "#"} Link 7
+      / Main Banner Image - place in a paragraph to enforce the modular scale spacing
+      %p
+        %img{src: "http://placehold.it/1000x400&text=[banner img]"}/
+  / End Nav and Banner
+  / Main Content Section
+  .row
+    .large-8.columns
+      %h4 This is a content section.
+      %p Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.
+      %p Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.
+      %p
+        %a.secondary.small.button{href: "#"} Next Page →
+      / It's up to your where to put your yield. I'm just generating templates to cook your layouts fast =)
+      = yield 
+    .large-4.columns
+      / Gallery sidebar with a block grid. Note: block grid items should be the same size for optimal results
+      %ul.small-block-grid-3
+        %li
+          %a{href: "#"}
+            %img{src: "http://placehold.it/120x120"}/
+        %li
+          %a{href: "#"}
+            %img{src: "http://placehold.it/120x120"}/
+        %li
+          %a{href: "#"}
+            %img{src: "http://placehold.it/120x120"}/
+        %li
+          %a{href: "#"}
+            %img{src: "http://placehold.it/120x120"}/
+        %li
+          %a{href: "#"}
+            %img{src: "http://placehold.it/120x120"}/
+        %li
+          %a{href: "#"}
+            %img{src: "http://placehold.it/120x120"}/
+  / Call to Action Panel
+  .row
+    .large-12.columns
+      .panel
+        %h4 Get in touch!
+        .row
+          .large-9.columns
+            %p We'd love to hear from you, you attractive person you.
+          .large-3.columns
+            %a.radius.button.right{href: "#"} Contact Us
+  / Footer
+  %footer.row
+    .large-12.columns
+      %hr/
+      .row
+        .large-6.columns
+          %p © Copyright no one at all. Go to town.
+        .large-6.columns
+          %ul.inline-list.right
+            %li
+              %a{href: "#"} Link 1
+            %li
+              %a{href: "#"} Link 2
+            %li
+              %a{href: "#"} Link 3
+            %li
+              %a{href: "#"} Link 4
+            %li
+              %a{href: "#"} Link 5
+            %li
+              %a{href: "#"} Link 6
+            %li
+              %a{href: "#"} Link 7
+  = javascript_include_tag "application"
+
+:plain
+  </html>
