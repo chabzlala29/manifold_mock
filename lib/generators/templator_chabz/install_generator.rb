@@ -23,6 +23,7 @@ module TemplatorChabz
           unless installed_gems.include?("twitter-bootstrap-rails")
             say "Adding bootstrap-rails gem to your Gemfile:"
             append_file "Gemfile", "\n", :force => true
+            gem 'less-rails'
             gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
             begin
               Bundler.with_clean_env do
