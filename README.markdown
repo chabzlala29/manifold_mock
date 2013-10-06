@@ -21,6 +21,25 @@ rails g templator_chabz:install
 ```bash
 rails g templator_chabz:install --haml
 ```
+##Foundation Rails
+Templator Chabz provides different foundation layouts. To generate template just run the following command on your console:
+
+```bash
+rails g templator_chabz:template
+```
+By default it will generate an erb layout file with blog style template. To specify a specific template just add the following to your template command:
+```bash
+rails g templator_chabz:template --template=<name of template>
+```
+Here are the list of templates available for Foundation Rails (more are coming soon):
+```bash
+banded, blog, feed, grid, orbit, banner-home, sidebar
+```
+
+You can specify HAML just by adding ```--haml``` to template generator:
+```bash
+rails g templator_chabz:template --haml
+```
 
 ##Bootstrap Rails
 Add ```--framework=bootstrap``` to generator:
