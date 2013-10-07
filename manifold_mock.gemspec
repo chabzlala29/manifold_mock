@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "templator_chabz/version"
+require "manifold_mock/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "templator_chabz"
-  s.version     = TemplatorChabz::VERSION
+  s.name        = "manifold_mock"
+  s.version     = ManifoldMock::VERSION
   s.authors     = ["Chabz"]
   s.email       = ["cpobre.peg@gmail.com"]
   s.homepage    = "http://github.com/chabzlala29/templator_chabz"

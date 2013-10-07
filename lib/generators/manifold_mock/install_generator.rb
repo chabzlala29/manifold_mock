@@ -2,10 +2,10 @@
 require 'rails/generators'
 require File.expand_path('../template_generator', __FILE__) 
 
-module TemplatorChabz
+module ManifoldMock
   module Generators
     class InstallGenerator < Rails::Generators::Base
-      desc "Install TemplatorChabz"
+      desc "Install ManifoldMock"
       class_option :framework, :type => :string, :default => "foundation", 
         :desc => "Specify Front-End framework"
       class_option :haml, :type => :boolean
@@ -17,7 +17,7 @@ module TemplatorChabz
       end
 
       def install
-        say "Hello, Templator Chabz will help you set up your template"
+        say "Hello, Manifold Mock will help you set up your template"
         installed_gems = Gem::Specification.map { |g| g.name }
         if options[:framework] == "bootstrap"
           unless installed_gems.include?("twitter-bootstrap-rails")

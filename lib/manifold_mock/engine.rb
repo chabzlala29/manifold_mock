@@ -1,6 +1,6 @@
 require 'rails'
 
-module TemplatorChabz
+module ManifoldMock
   class Engine < Rails::Engine
   end
 end

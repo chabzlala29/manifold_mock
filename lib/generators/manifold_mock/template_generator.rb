@@ -1,6 +1,6 @@
 require 'rails/generators'
 
-module TemplatorChabz
+module ManifoldMock
   module Generators
     class TemplateGenerator < Rails::Generators::Base
       ZB_TEMPLATES = ['banded','blog', 'feed', 'grid', 'orbit', 'banner-home', 'sidebar']
