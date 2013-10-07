@@ -1,4 +1,4 @@
-# Templator Chabz
+# Manifold Mock
 
 A gem that generates templates for your rails app. It uses Bootstrap and Foundation.
 
@@ -13,34 +13,34 @@ rails 4.0.0
 Add this to your Gemfile and run ```bundle install```:
 
 ```ruby
-gem 'templator_chabz', '~> 0.9.0'
+gem 'manifold_mock', '~> 0.0.1'
 ```
 From latest build:
   
 ```ruby
-gem 'templator_chabz', git: 'git@github.com:chabzlala29/templator_chabz.git'
+gem 'manifold_mock', git: 'git@github.com:chabzlala29/manifold_mock.git'
 ```
 
 # What's Next?
 
 By default generator files set to Zurb Foundation front-end framework. To generate files run the following command.
 ```bash
-rails generate templator_chabz:install  
+rails generate manifold:install  
 ```
 
 ###If your using HAML add ```--haml``` to generator:
 ```bash
-rails generate templator_chabz:install --haml
+rails generate manifold:install --haml
 ```
 ##Foundation Rails
-Templator Chabz provides different foundation layouts. To generate template just run the following command on your console:
+Manifold Mock provides different foundation layouts. To generate template just run the following command on your console:
 
 ```bash
-rails generate templator_chabz:template
+rails generate manifold:template
 ```
 By default it will generate an erb layout file with blog style template. To specify a specific template just add the following to your template command:
 ```bash
-rails generate templator_chabz:template --template=<name of template>
+rails generate manifold:template --template=<name of template>
 ```
 Here are the list of templates available for Foundation Rails (more are coming soon):
 ```bash
@@ -49,23 +49,23 @@ banded, blog, feed, grid, orbit, banner-home, sidebar
 
 You can specify HAML just by adding ```--haml``` to template generator:
 ```bash
-rails generate templator_chabz:template --haml
+rails generate manifold:template --haml
 ```
 
 ##Bootstrap Rails
 Add ```--framework=bootstrap``` to generator:
 ```bash
-rails generate templator_chabz:install --framework=bootstrap
+rails generate manifold:install --framework=bootstrap
 ```
 
 Generate Fluid Layout(Only in Bootstrap):
 ```bash
-rails generate templator_chabz:install --framework=bootstrap --fluid
+rails generate manifold:install --framework=bootstrap --fluid
 ```
 
 Or Fixed Layout(Only in Bootstrap):
 ```bash
-rails generate templator_chabz:install --framework=bootstrap --fixed
+rails generate manifold:install --framework=bootstrap --fixed
 ```
 
 
