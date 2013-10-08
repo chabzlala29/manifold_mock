@@ -25,22 +25,22 @@ gem 'manifold_mock', git: 'git@github.com:chabzlala29/manifold_mock.git'
 
 By default generator files set to Zurb Foundation front-end framework. To generate files run the following command.
 ```bash
-rails generate manifold:install  
+rails generate manifold_mock:install  
 ```
 
 ###If your using HAML add ```--haml``` to generator:
 ```bash
-rails generate manifold:install --haml
+rails generate manifold_mock:install --haml
 ```
 ##Foundation Rails
 Manifold Mock provides different foundation layouts. To generate template just run the following command on your console:
 
 ```bash
-rails generate manifold:template
+rails generate manifold_mock:template
 ```
 By default it will generate an erb layout file with blog style template. To specify a specific template just add the following to your template command:
 ```bash
-rails generate manifold:template --template=<name of template>
+rails generate manifold_mock:template --template=<name of template>
 ```
 Here are the list of templates available for Foundation Rails (more are coming soon):
 ```bash
@@ -49,23 +49,23 @@ banded, blog, feed, grid, orbit, banner-home, sidebar
 
 You can specify HAML just by adding ```--haml``` to template generator:
 ```bash
-rails generate manifold:template --haml
+rails generate manifold_mock:template --haml
 ```
 
 ##Bootstrap Rails
 Add ```--framework=bootstrap``` to generator:
 ```bash
-rails generate manifold:install --framework=bootstrap
+rails generate manifold_mock:install --framework=bootstrap
 ```
 
 Generate Fluid Layout(Only in Bootstrap):
 ```bash
-rails generate manifold:install --framework=bootstrap --fluid
+rails generate manifold_mock:install --framework=bootstrap --fluid
 ```
 
 Or Fixed Layout(Only in Bootstrap):
 ```bash
-rails generate manifold:install --framework=bootstrap --fixed
+rails generate manifold_mock:install --framework=bootstrap --fixed
 ```
 
 
